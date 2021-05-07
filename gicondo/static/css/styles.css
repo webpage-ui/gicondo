@@ -12,11 +12,13 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    margin: auto;
+    padding: auto;
 }
 
 body::before{
     content: "";
-    position: absolute;
+    position: fixed;
     top:0; 
     left: 0;
     width: 100%;
@@ -26,7 +28,7 @@ body::before{
 }
 body::after{
     content: "";
-    position: absolute;
+    position: fixed;
     top:0; 
     left: 0;
     width: 100%;
@@ -37,9 +39,9 @@ body::after{
 .small-container{
     position: relative;
     display: flex;
-    max-width: 1200px;
-    justify-content:flex-start;
-    align-items: flex-start;
+    max-width: 1920px;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     z-index: 1; 
 }
@@ -128,14 +130,7 @@ body::after{
     transform: translateY(0px);
     opacity: 1;
 }
-.container .card .content h3{
-    position: absolute;
-    top: -40px;
-    right: 30px;
-    font-size: 8em;
-    color:rgba(0, 0, 0, 0.05); 
-    pointer-events: none;
-}
+
 .container .card .content h2{
     font-size: 1.8em;
     margin-bottom: 30px;
