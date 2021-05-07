@@ -15,8 +15,10 @@
         </div>
         <div class="small-card">
            <div class="content">
-                <li><a href="tel:5545309857"><img src="static/images/icons/phone.png" alt=""></a> Teléfono: <a href="tel:5545309857">55 4530 9857</a></li>
-                <li><a href="mailto:contacto@gicondo.com"><img src="static/images/icons/email.png" alt=""></a> Correo: <a href="mailto:contacto@gicondo.com">contacto@gicondo.com</a></li>
+                <ul>
+                    <li><a href="tel:5545309857"><img src="static/images/icons/phone.png" alt=""></a> Teléfono: <a href="tel:5545309857">55 4530 9857</a></li>
+                    <li><a href="mailto:contacto@gicondo.com"><img src="static/images/icons/email.png" alt=""></a> Correo: <a href="mailto:contacto@gicondo.com">contacto@gicondo.com</a></li>
+                </ul>
            </div>
         </div>
     </div>
@@ -28,8 +30,8 @@
         </div>
     </div>
     <div class="container">
-        <div class="card">
-            <div class="gallery"><img src="static/images/condominio.jpg" alt=""></div>
+        <div class="big-card">
+            <div class="gallery"><img src="static/images/gallery/1.jpg" alt=""></div>
         </div>
         <div class="card">
             <div class="content">
@@ -37,12 +39,19 @@
                 <p>Somos una administradora certificada con amplia experiencia por la Procuraduría Social (PROSOC) en el área de la Administración Inmobiliaria.</p>
             </div>
         </div>
+        
         <div class="card">
             <div class="content">
                 <h2>Misión</h2>
                 <p>Brindar soluciones integrales de alta calidad en la administración de condominios.
                     Satisfacer las necesidades de nuestros clientes y contribuir a que los condominios mejoren sus procesos y promuevan un ambiente de mejora continua.</p>
             </div>
+        </div>
+        <div class="big-card">
+            <div class="gallery"><img src="static/images/gallery/2.jpg" alt=""></div>
+        </div>
+        <div class="big-card">
+            <div class="gallery"><img src="static/images/gallery/3.png" alt=""></div>
         </div>
         <div class="card">
             <div class="content">
@@ -73,13 +82,7 @@
                 <img src="static/images/icons/team.png" alt="">
             </div>
         </div>
-        <div class="card">
-            <div class="content">
-                <h2>Administradora Certificada</h2>
-                <p>Nuestros Agentes cuentan con una certificación documentada por la PROSOC.</p>
-                <img src="static/images/icons/home.png" alt="">
-            </div>
-        </div>
+
         <div class="card">
             <div class="content">
                 <h2>Servicio Inteligente</h2>
@@ -88,9 +91,18 @@
             </div>
         </div>
         <div class="big-card">
-            <h2>Administradora Certificada</h2>
-            <p>Nuestros Agentes cuentan con una certificación documentada por la PROSOC.</p>
-            <img src="static/images/condominio.jpg" alt="">
+            <div class="row">
+                <div class="column">
+                    <img src="static/images/gallery/1.jpg" alt="">
+                </div>
+                <div class="column">
+                    <div class="content">
+                        <h2>Administradora certificada</h2>
+                        <p>Nuestros agentes cuentan con una certificación documentada por la PROSOC.</p>
+                        <img src="static/images/icons/home.png" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="static/js/imports/vanilla-tilt.js"></script>
@@ -112,6 +124,14 @@
     </script>
     <script>
         VanillaTilt.init(document.querySelectorAll(".section-title-card"), {
+		    max: 25,
+		    speed: 400, 
+            glare: true,
+            "max-glare": 1,
+	    }); 
+    </script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".big-card"), {
 		    max: 25,
 		    speed: 400, 
             glare: true,
