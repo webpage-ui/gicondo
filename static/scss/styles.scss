@@ -114,6 +114,8 @@ header{
 section{
     width: 100%;
     min-height: 100vh;
+    position: fixed;
+    z-index: 5;
     .glass-menu{
         position: fixed;
         transition: 2s;
