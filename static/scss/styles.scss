@@ -12,8 +12,6 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    margin: auto;
-    padding: auto;
 }
 
 body::before{
@@ -36,7 +34,138 @@ body::after{
     background: linear-gradient(#2196f3, #f0f); 
     clip-path: circle(30% at 10% 10%);
 }
-
+header{
+    z-index: 10;
+    margin-top: 20px;
+    position: fixed;
+    top: -20px; 
+    right: 20px; 
+    left: 20px; 
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25); 
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);  
+    .logo{
+        color: black; 
+        font-weight: 700;
+        font-size: 2em;
+        text-decoration: none;
+        margin-bottom: 15px;
+    } 
+    ul{
+        display: flex; 
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        li{
+            list-style: none;
+            margin: 0
+            10px 10px; 
+            a{
+                background: rgba(255,255,255, 0.2);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.25); 
+                border-top: 1px solid rgba(255, 255, 255, 0.5);
+                border-left: 1px solid rgba(255, 255, 255, 0.5);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 1.2em;
+                color: black; 
+                padding: 8px 15px;
+                border-radius: 25px;
+            }
+            a:hover{
+                background: rgba(30, 144, 255, 0.3);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                color: white;
+            }
+            a.active{
+                background: rgba(0,0, 0, 0.7); 
+                border-radius: 20px;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.25); 
+                border-top: 1px solid rgba(255, 255, 255, 0.5);
+                border-left: 1px solid rgba(255, 255, 255, 0.5);
+                font-weight: 500;
+                color: white;
+            }
+        }
+    }
+    button{
+        background: rgba(0,0,0,0); 
+        cursor: pointer;
+        border: none; 
+        border-radius: 20px;
+    }
+    button:hover{
+        background: rgba(255, 255, 255, 0.2); 
+    }
+}
+.glass-menu{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px);
+    z-index: 5;
+    display: none;
+}
+.glass-menu.active{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    ul{
+        display: block;
+        list-style: none;
+        margin-bottom: 100px;
+        li{
+            font-size: 1.5em;
+            margin: 40px 0; 
+            text-align: center;
+            a{
+                background: rgba(255,255,255, 0.2);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.25); 
+                border-top: 1px solid rgba(255, 255, 255, 0.5);
+                border-left: 1px solid rgba(255, 255, 255, 0.5);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 1.2em;
+                color: black; 
+                padding: 8px 15px;
+                border-radius: 25px;
+            }
+            a:hover{
+                background: rgba(30, 144, 255, 0.3);
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                color: white;
+            }
+            a.active{
+                background: rgba(0,0, 0, 0.7); 
+                border-radius: 20px;
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.25); 
+                border-top: 1px solid rgba(255, 255, 255, 0.5);
+                border-left: 1px solid rgba(255, 255, 255, 0.5);
+                font-weight: 900;
+                color: white;
+            }
+        }
+    }
+}
 .small-container{
     position: relative;
     display: flex;
@@ -199,5 +328,36 @@ body::after{
                 z-index: 1;
             }
         }
+    }
+}
+
+.first{
+    margin-top: 100px;
+}
+
+@media (max-width: 769px){
+    header{
+        ul{
+            display: none;
+        }
+        button{
+            display: flex;
+        }
+    }
+}
+@media (min-width: 770px){
+    header{
+        ul{
+            display: flex;
+        }
+        button{
+            display: none;
+        }
+    }
+    .glass-menu{
+        display: none;
+    }
+    .glass-menu.active{
+        display: none;
     }
 }
