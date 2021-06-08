@@ -1,9 +1,9 @@
 function menuToggle(){
     const toggleMenu = document.querySelector(".toggle"); 
-    const glass_menu = document.querySelector(".glass-menu"); 
+    const section = document.querySelector("section"); 
 
     toggleMenu.classList.toggle("active"); 
-    glass_menu.classList.toggle("active");
+    section.classList.toggle("active");
 
     if(toggleMenu.classList.contains("active")){
         const icon = document.createElement("img"); 
