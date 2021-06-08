@@ -252,12 +252,14 @@ section.active{
             }
         }
         .image-box{
+            background: whitesmoke;
+            border: 3px green solid;
             margin-right: 300px;
             margin-bottom: 50px;
-            border: 3px green solid;
             border-radius: 10px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
             a{
+                
                 button{
                     font-size: 3em;
                 }
@@ -454,6 +456,7 @@ section.active{
 }
 @media(max-width: 930px){
     .informative-card{
+        z-index: 5;
         .glass-container{
             flex-direction: column-reverse;
             .image-box{

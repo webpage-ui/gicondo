@@ -6,6 +6,7 @@ function menuToggle(){
     section.classList.toggle("active");
 
     if(toggleMenu.classList.contains("active")){
+        section.style.zIndex = 6;
         const icon = document.createElement("img"); 
         icon.src = "static/images/icons/close.svg"; 
         icon.alt = "Close menu"; 
@@ -15,6 +16,7 @@ function menuToggle(){
         toggleMenu.append(icon); 
     }
     else if(!toggleMenu.classList.contains("active")){
+        section.style.zIndex = 5;
         const icon = document.createElement("img"); 
         icon.src = "static/images/icons/list.svg"; 
         icon.alt = "Open menu"; 
