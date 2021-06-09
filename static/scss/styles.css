@@ -250,6 +250,7 @@ section.active .glass-menu ul li a.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 
 .big-background img {
