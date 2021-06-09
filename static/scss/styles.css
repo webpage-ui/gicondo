@@ -258,6 +258,7 @@ section.active .glass-menu ul li a.active {
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
+  overflow: hidden;
 }
 
 .informative-card {
@@ -352,18 +353,51 @@ section.active .glass-menu ul li a.active {
   color: white;
 }
 
-.informative-card .glass-container .image-box {
-  background: whitesmoke;
-  border: 3px green solid;
+.informative-card .glass-container .side-box {
   margin-right: 300px;
-  margin-bottom: 50px;
-  border-radius: 10px;
   -webkit-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
           box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
 }
 
-.informative-card .glass-container .image-box a button {
+.informative-card .glass-container .side-box ul {
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.informative-card .glass-container .side-box ul li {
+  background: whitesmoke;
+  margin-bottom: 20px;
+}
+
+.informative-card .glass-container .side-box ul li a button {
   font-size: 3em;
+}
+
+.informative-card .glass-container .side-box .whatsapp {
+  border: 3px solid green;
+  border-radius: 15px;
+}
+
+.informative-card .glass-container .side-box .mail {
+  border: 3px solid blue;
+  border-radius: 15px;
 }
 
 .small-container {
@@ -630,7 +664,7 @@ section.active .glass-menu ul li a.active {
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
-  .informative-card .glass-container .image-box {
+  .informative-card .glass-container .side-box {
     margin-right: 0;
   }
 }

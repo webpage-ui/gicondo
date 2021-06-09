@@ -189,6 +189,7 @@ section.active{
         width: 100vw; 
         height: 100vh;
         object-fit: cover;
+        overflow: hidden;
     }
 }
 .informative-card{
@@ -253,18 +254,36 @@ section.active{
                 color: white;
             }
         }
-        .image-box{
-            background: whitesmoke;
-            border: 3px green solid;
+        .side-box{
             margin-right: 300px;
-            margin-bottom: 50px;
-            border-radius: 10px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-            a{
-                
-                button{
-                    font-size: 3em;
+            ul{
+                border: none;
+                display: flex; 
+                flex-direction: column;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                li{
+                    background: whitesmoke;
+                    margin-bottom: 20px;
+                    a{
+                        button{
+                            font-size: 3em;
+                        }
+                    }
                 }
+            }
+            .whatsapp{
+                border: 3px solid green;
+                border-radius: 15px;
+            }
+            .mail{
+                border: 3px solid blue;
+                border-radius: 15px;
             }
         }
     }
@@ -461,7 +480,7 @@ section.active{
         z-index: 5;
         .glass-container{
             flex-direction: column-reverse;
-            .image-box{
+            .side-box{
                 margin-right: 0;
             }
         }
