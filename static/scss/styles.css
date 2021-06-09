@@ -164,7 +164,7 @@ section .glass-menu {
           transition-delay: 0s;
   width: 0%;
   min-height: 100vh;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
   z-index: 5;
@@ -651,6 +651,27 @@ section.active .glass-menu ul li a.active {
   .informative-card .glass-container .content {
     -webkit-transform: translateX(0px);
             transform: translateX(0px);
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .informative-card .glass-container .content h2 {
+    text-align: center;
+  }
+  .informative-card .glass-container .content p {
+    text-align: center;
+  }
+  .informative-card .glass-container .content a {
+    text-align: center;
+    margin-bottom: 10px;
   }
 }
 
