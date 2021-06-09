@@ -164,9 +164,9 @@ section .glass-menu {
           transition-delay: 0s;
   width: 0%;
   min-height: 100vh;
-  background: rgba(255, 255, 255, 0.2);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   z-index: 5;
   display: -webkit-box;
   display: -ms-flexbox;
