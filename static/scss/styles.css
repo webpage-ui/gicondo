@@ -253,8 +253,10 @@ section.active .glass-menu ul li a.active {
 }
 
 .big-background img {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .informative-card {
