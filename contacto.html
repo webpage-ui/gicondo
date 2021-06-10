@@ -42,6 +42,59 @@
             <li><a href="contacto.html" class="active">Contacto</a></li>
         </ul>
         <button class="toggle" onclick="menuToggle();"><img src="static/images/icons/list.svg" alt="Open Menu" class="icon"></button>
-    </header>   
+    </header>  
+    <section class="contact-section">
+        <div class="form-container">
+            <h2>Contáctanos</h2>
+            <form action="mailto: ligia@gicondo.com" method="POST">
+                <div class="row100">
+                    <div class="column">
+                        <div class="input-box">
+                            <input type="text" name="Name" id="name" required="required">
+                            <span class="text">Nombre</span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="input-box">
+                            <input type="text" name="Surname" id="surname" required="required">
+                            <span class="text">Apellido</span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row100">
+                    <div class="column">
+                        <div class="input-box">
+                            <input type="email" name="Email" id="email" required="required">
+                            <span class="text">Correo</span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="input-box">
+                            <input type="tel" name="Phone" id="phone" required="required">
+                            <span class="text">Teléfono</span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row100">
+                    <div class="column">
+                        <div class="input-box text-area">
+                            <textarea name="Message" id="message" required="required"></textarea>
+                            <span class="text">Mensaje</span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row100">
+                    <div class="column">
+                        <input class="submit" type="submit" value="Enviar">
+                    </div>
+                </div>
+           </form>
+        </div>
+    </section>
 </body>
 </html>
