@@ -368,6 +368,10 @@ header{
                     transition: 0.5s; 
                     pointer-events: none;
                 }
+                .text.filled{
+                    top: -35px; 
+                    left: -10px; 
+                }
                 input:focus + .text, input:valid + .text{
                     top: -35px; 
                     left: -10px; 
@@ -382,6 +386,9 @@ header{
                     transition: 0.5s;
                     border-radius: 2px;
                     pointer-events: none;
+                }
+                .line.filled{
+                    height: 100%;
                 }
                 input:focus ~ .line, input:valid ~ .line {
                     height: 100%; 

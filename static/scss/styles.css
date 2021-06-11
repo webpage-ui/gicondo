@@ -505,6 +505,11 @@ header button:hover {
   pointer-events: none;
 }
 
+.contact-section .row100 .column .input-box .text.filled {
+  top: -35px;
+  left: -10px;
+}
+
 .contact-section .row100 .column .input-box input:focus + .text, .contact-section .row100 .column .input-box input:valid + .text {
   top: -35px;
   left: -10px;
@@ -521,6 +526,10 @@ header button:hover {
   transition: 0.5s;
   border-radius: 2px;
   pointer-events: none;
+}
+
+.contact-section .row100 .column .input-box .line.filled {
+  height: 100%;
 }
 
 .contact-section .row100 .column .input-box input:focus ~ .line, .contact-section .row100 .column .input-box input:valid ~ .line {

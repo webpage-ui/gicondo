@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="static/images/icons/GIC_logo.png" type="image/x-icon">
     <script src="static/js/menu.js"></script>
+    <script src="static/js/contact.js"></script>
 </head>
 <body>
     <section class="glass-section">
@@ -46,7 +47,7 @@
     <section class="contact-section">
         <div class="form-container">
             <h2>Contáctanos</h2>
-            <form action="mailto: contacto@gicondo.com" method="POST">
+            <form action="mailto:contacto@gicondo.com" id="form" method="POST">
                 <div class="row100">
                     <div class="column">
                         <div class="input-box">
@@ -67,8 +68,8 @@
                     <div class="column">
                         <div class="input-box">
                             <input type="email" name="Email" id="email" required="required">
-                            <span class="text">Correo</span>
-                            <span class="line"></span>
+                            <span class="text" id="email-text">Correo</span>
+                            <span class="line" id="email-line"></span>
                         </div>
                     </div>
                     <div class="column">
