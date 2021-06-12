@@ -1,3 +1,9 @@
+<?php
+
+if($_POST["Message"]){
+    mail("manusandoval05@gmail.com", "Contacto", $_POST["Test"]. "From: an@email.adress"); 
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
