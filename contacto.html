@@ -47,19 +47,19 @@
     <section class="contact-section">
         <div class="form-container">
             <h2>Contáctanos</h2>
-            <form action="mailto:contacto@gicondo.com" id="form" method="POST">
+            <form action="mailto:contacto@gicondo.com" enctype="multipart/form-data" id="form" method="POST">
                 <div class="row100">
                     <div class="column">
                         <div class="input-box">
                             <input type="text" name="Name" id="name" required="required">
-                            <span class="text">Nombre</span>
+                            <span class="text">Nombre *</span>
                             <span class="line"></span>
                         </div>
                     </div>
                     <div class="column">
                         <div class="input-box">
                             <input type="text" name="Surname" id="surname" required="required">
-                            <span class="text">Apellido</span>
+                            <span class="text">Apellido *</span>
                             <span class="line"></span>
                         </div>
                     </div>
@@ -68,15 +68,15 @@
                     <div class="column">
                         <div class="input-box">
                             <input type="email" name="Email" id="email" required="required">
-                            <span class="text" id="email-text">Correo</span>
+                            <span class="text" id="email-text">Correo *</span>
                             <span class="line" id="email-line"></span>
                         </div>
                     </div>
                     <div class="column">
                         <div class="input-box">
                             <input type="tel" name="Phone" id="phone" required="required">
-                            <span class="text">Teléfono</span>
-                            <span class="line"></span>
+                            <span class="text" id="tel-text">Teléfono *</span>
+                            <span class="line" id="tel-line"></span>
                         </div>
                     </div>
                 </div>
@@ -84,7 +84,7 @@
                     <div class="column">
                         <div class="input-box text-area">
                             <textarea name="Message" id="message" required="required"></textarea>
-                            <span class="text">Mensaje</span>
+                            <span class="text">Mensaje *</span> 
                             <span class="line"></span>
                         </div>
                     </div>
