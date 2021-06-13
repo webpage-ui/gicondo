@@ -288,9 +288,47 @@ header{
         }
     }
 }
+.side-box{
+    margin-top: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+
+    ul{
+        border: none;
+        display: flex; 
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li{
+            background: whitesmoke;
+            margin-bottom: 20px;
+            a{
+                button{
+                    font-size: 1.0em;
+                }
+            }
+        }
+    }
+    .whatsapp{
+        border: 3px solid green;
+        border-radius: 15px;
+    }
+    .mail{
+        border: 3px solid blue;
+        border-radius: 15px;
+    }
+}
 .contact-section{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
     align-content: center;
     min-height: 100vh;
     position: relative;
@@ -646,6 +684,23 @@ header{
     section.active{
         .glass-menu{
             display: none;
+        }
+    }
+}
+@media (max-width: 390px){
+    .contact-section{
+        h2{
+            font-size: 2em;
+        }
+    }
+}
+@media (max-height: 750px){
+    .glass-section.active{
+        .glass-menu{
+            justify-content: flex-end;
+            ul{
+                margin-bottom: 0px;
+            }
         }
     }
 }

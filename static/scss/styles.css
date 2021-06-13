@@ -400,6 +400,60 @@ header button:hover {
   border-radius: 15px;
 }
 
+.side-box {
+  margin-top: 20px;
+  -webkit-box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.side-box ul {
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.side-box ul li {
+  background: whitesmoke;
+  margin-bottom: 20px;
+}
+
+.side-box ul li a button {
+  font-size: 1.0em;
+}
+
+.side-box .whatsapp {
+  border: 3px solid green;
+  border-radius: 15px;
+}
+
+.side-box .mail {
+  border: 3px solid blue;
+  border-radius: 15px;
+}
+
 .contact-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -407,6 +461,12 @@ header button:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-line-pack: center;
       align-content: center;
   min-height: 100vh;
@@ -864,6 +924,23 @@ header button:hover {
   }
   section.active .glass-menu {
     display: none;
+  }
+}
+
+@media (max-width: 390px) {
+  .contact-section h2 {
+    font-size: 2em;
+  }
+}
+
+@media (max-height: 750px) {
+  .glass-section.active .glass-menu {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .glass-section.active .glass-menu ul {
+    margin-bottom: 0px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
