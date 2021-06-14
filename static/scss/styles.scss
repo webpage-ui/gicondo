@@ -455,14 +455,17 @@ header{
         }
     }
 }
-.small-container{
+
+.card-container{
     position: relative;
     display: flex;
-    max-width: 1920px;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     flex-wrap: wrap;
-    z-index: 1; 
+    z-index: 5; 
+    margin: auto;
+    width: 100%;
+    overflow: hidden;
     .small-card{
         position: relative;
         width: 360px;
@@ -472,8 +475,8 @@ header{
         border-radius: 15px;
         background: rgba(0, 0, 0, 0.1);
         overflow: hidden;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: flex-start;
         border-top: 1px solid rgba(0, 0, 0, 0.5);
         border-left: 1px solid rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(5px);
@@ -493,11 +496,11 @@ header{
                 height: 32px;
             }
             ul{
-                list-style: none;
-                list-style-type: none;
                 color: black;
-                line-height: 3.8;
+                line-height: 2;
                 font-weight: 600;
+                list-style: circle;
+                text-align: left;
                 a{
                     color: black; 
                 }
@@ -507,16 +510,6 @@ header{
             }
         }
     }
-}
-.container{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1200px;
-    flex-wrap: wrap;
-    z-index: 1; 
-    margin: auto;
     .card{
         position: relative;
         width: 280px;
@@ -524,22 +517,23 @@ header{
         margin: 30px;
         box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
         border-radius: 15px;
-        background: rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(20px);
         overflow: hidden;
-        justify-content: center;
-        align-items: center;
-        border-top: 1px solid rgba(0, 0, 0, 0.5);
-        border-left: 1px solid rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(5px);
+        justify-content: flex-start;
+        align-items: flex-start;
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(15px);
         .content{
             padding: 20px;
-            text-align: center;
             transition: 0.5s;
             h2{
                 font-size: 1.8em;
                 margin-bottom: 30px;
                 color: black;
                 z-index: 1;
+                text-align: center;
             }
             p{
                 font-size: 1em;
@@ -549,13 +543,17 @@ header{
                 margin-bottom: 20px;
             }
             ul{
-                list-style: none;
                 color: black;
-                line-height: 3.8;
+                line-height: 2;
+                text-align: left;
+                li{
+                    text-align: left;
+                }
             }
             img{
                 width: 128px; 
-                height: 128px; 
+                height: 128px;
+                margin-left: 50px; 
             }
         }
     }
