@@ -923,15 +923,4 @@ header button:hover {
     font-size: 2em;
   }
 }
-
-@media (max-height: 750px) {
-  .glass-section.active .glass-menu {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-  }
-  .glass-section.active .glass-menu ul {
-    margin-bottom: 0px;
-  }
-}
 /*# sourceMappingURL=styles.css.map */

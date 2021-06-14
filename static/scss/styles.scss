@@ -692,13 +692,3 @@ header{
         }
     }
 }
-@media (max-height: 750px){
-    .glass-section.active{
-        .glass-menu{
-            justify-content: flex-end;
-            ul{
-                margin-bottom: 0px;
-            }
-        }
-    }
-}
