@@ -230,7 +230,8 @@ header{
             }
             p{
                 font-size: 1.2em;
-                color: $content-color;  
+                color: $content-color;
+                line-height: 1.8;  
             }
             a{
                 display: inline-block;
@@ -286,6 +287,16 @@ header{
                 border-radius: 15px;
             }
         }
+        .image-box{
+            animation: heavy-bounce 4s infinite alternate;
+            margin-right: 200px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25); 
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            border-left: 1px solid rgba(255, 255, 255, 0.5);
+        }
     }
 }
 .side-box{
@@ -310,7 +321,7 @@ header{
             margin-bottom: 20px;
             a{
                 button{
-                    font-size: 1.0em;
+                    font-size: 3.0em;
                 }
             }
         }
@@ -690,5 +701,13 @@ header{
         h2{
             font-size: 2em;
         }
+    }
+}
+@keyframes heavy-bounce{
+    0%{
+        transform: translateY(100px);
+    }
+    100%{
+        transform: translateY(-20px);
     }
 }
