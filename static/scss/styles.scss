@@ -309,9 +309,9 @@ header{
     ul{
         border: none;
         display: flex; 
-        flex-direction: column;
+        flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         padding: 0;
         margin: 0;
@@ -319,6 +319,7 @@ header{
         li{
             background: whitesmoke;
             margin-bottom: 20px;
+            margin-right: 20px;
             a{
                 button{
                     font-size: 3.0em;
