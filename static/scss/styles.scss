@@ -187,7 +187,7 @@ header{
     overflow: hidden;
     img{
         width: 100vw; 
-        height: 100vh;
+        height: 75vh;
         object-fit: cover;
         overflow: hidden;
     }
@@ -224,9 +224,12 @@ header{
             padding: 40px; 
             padding-left: 110px; 
             h2{
-                font-size: 3em;
+                font-size: 3.5em;
                 margin-bottom: 10px;
                 color: $content-color; 
+            }
+            h4{
+                font-size: 2em;
             }
             p{
                 font-size: 1.2em;

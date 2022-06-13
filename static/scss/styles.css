@@ -255,7 +255,7 @@ header button:hover {
 
 .big-background img {
   width: 100vw;
-  height: 100vh;
+  height: 75vh;
   -o-object-fit: cover;
      object-fit: cover;
   overflow: hidden;
@@ -317,9 +317,13 @@ header button:hover {
 }
 
 .informative-card .glass-container .content h2 {
-  font-size: 3em;
+  font-size: 3.5em;
   margin-bottom: 10px;
   color: black;
+}
+
+.informative-card .glass-container .content h4 {
+  font-size: 2em;
 }
 
 .informative-card .glass-container .content p {
