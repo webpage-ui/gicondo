@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,37 +13,41 @@
     <meta property="og:title" content="GIC - Gestión Inteligente de Condominios">
     <meta property="og:type" content="website">
     <meta property="og:description" content="Administración de Condominios con alta tecnología">
-    <meta property="og:image" content="https://raw.githubusercontent.com/webpage-ui/gicondo/main/static/images/preview.webp?v=bbf01bd1">
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/webpage-ui/gicondo/main/static/images/preview.webp?v=bbf01bd1">
     <meta property="og:image:width" content="1880">
     <meta property="og:image:height" content="996">
     <meta property="og:url" content="https://gicondo.com">
     <title>Servicios GIC</title>
     <link rel="stylesheet" href="static/scss/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="static/images/icons/GIC_logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="static/images/logo/gicondo_favicon_small.png" type="image/x-icon">
     <script src="static/js/menu.js"></script>
 </head>
+
 <body>
-    <section class="glass-section">
-        <div class="glass-menu">
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="servicios.html" class="active">Servicios</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </div>
-    </section>
-    <header>
-        <a href="#" class="logo">Gicondo</a>
+    <header class="info">
+        <a href="#" class="logo"><img src="static/images/logo/gicondo_logo.png" alt=""></a>
         <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="servicios.html" class="active">Servicios</a></li>
+            <li><a class="active" href="servicios.html">Servicios</a></li>
             <li><a href="nosotros.html">Nosotros</a></li>
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
-        <button class="toggle" onclick="menuToggle();"><img src="static/images/icons/list.svg" alt="Open Menu" class="icon"></button>
-    </header>  
+        <div class="toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <aside class="sidebar">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </aside>
     <div class="card-container first">
         <div class="card">
             <div class="content">
@@ -150,11 +155,12 @@
     <script type="text/javascript" src="static/js/vanilla-tilt.js"></script>
     <script type="text/javascript">
         VanillaTilt.init(document.querySelectorAll(".card"), {
-            max: 25, 
-            speed: 400, 
-            glare: true, 
+            max: 25,
+            speed: 400,
+            glare: true,
             "max-glare": 1
         });
     </script>
 </body>
+
 </html>
