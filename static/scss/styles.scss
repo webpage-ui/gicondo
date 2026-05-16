@@ -1,41 +1,50 @@
 // --- Variables ---
-// Nueva paleta de colores
-$color-primary: #0a7c6e; // Verde Azulado / Teal (Confianza)
-$color-secondary: #f59e0b; // Ámbar / Naranja (Acentos e íconos)
-$color-accent: #ff6b35; // Naranja Coral (Call To Action)
-$color-bg-light: #fafafa; // Gris muy claro (Fondo general)
+$color-primary: #0a7c6e;
+$color-secondary: #f59e0b;
+$color-accent: #ff6b35;
+$color-whatsapp: #25d366;
+$color-bg-light: #fafafa;
 $color-white: #ffffff;
 
-// Tonos neutros para texto
-$text-dark: #1f2937;
-$text-muted: #6b7280;
+$text-dark: #111827;
+$text-muted: #4b5563;
 $border-color: #e5e7eb;
 
-$font-main: "Inter", sans-serif;
+$font-headings: "Lora", serif;
+$font-body: "Inter", sans-serif;
 
-// --- Resets & Base ---
+// --- Base Reset ---
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html,
 body {
-  font-family: $font-main;
+  width: 100%;
+  overflow-x: hidden; // Previene el scroll horizontal errático en celulares
+}
+
+body {
+  font-family: $font-body;
   color: $text-dark;
   line-height: 1.6;
-  scroll-behavior: smooth;
   background-color: $color-bg-light;
-  overflow-x: hidden;
+  background-image: radial-gradient(
+    rgba($color-primary, 0.04) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+  -webkit-font-smoothing: antialiased;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
+h1,
+h2,
+h3,
+h4,
+.logo {
+  font-family: $font-headings;
 }
 
 .container {
@@ -45,82 +54,80 @@ ul {
 }
 
 .section {
-  padding: 100px 0;
+  padding: 80px 0; // Padding optimizado para legibilidad móvil
+
+  @media (min-width: 768px) {
+    padding: 110px 0;
+  }
 }
 
-.bg-light {
-  background-color: $color-bg-light;
-}
 .bg-white {
   background-color: $color-white;
 }
 
-// --- Tipografía y Títulos ---
+// --- Section Headers ---
 .section-header {
   text-align: center;
   max-width: 700px;
-  margin: 0 auto 60px;
+  margin: 0 auto 50px;
 
   h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: $color-primary;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     font-weight: 700;
-  }
 
+    @media (min-width: 768px) {
+      font-size: 2.6rem;
+    }
+  }
   p {
     color: $text-muted;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    @media (min-width: 768px) {
+      font-size: 1.15rem;
+    }
   }
 }
 
-// --- Botones ---
-.btn-primary,
+// --- Buttons ---
 .btn-accent,
-.btn-outline {
+.btn-whatsapp {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 14px 32px;
-  border-radius: 8px; // Bordes más modernos
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 12px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   cursor: pointer;
   border: none;
-  font-size: 1rem;
-}
-
-.btn-primary {
-  background-color: $color-primary;
-  color: $color-white;
-
-  &:hover {
-    background-color: darken($color-primary, 8%);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba($color-primary, 0.3);
-  }
+  text-decoration: none;
+  width: auto;
 }
 
 .btn-accent {
   background-color: $color-accent;
   color: $color-white;
+  box-shadow: 0 4px 14px rgba($color-accent, 0.25);
 
   &:hover {
-    background-color: darken($color-accent, 8%);
+    background-color: darken($color-accent, 6%);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba($color-accent, 0.3);
+    box-shadow: 0 6px 18px rgba($color-accent, 0.4);
   }
 }
 
-.btn-outline {
-  background-color: transparent;
+.btn-whatsapp {
+  background: linear-gradient(135deg, $color-whatsapp 0%, #1ebd59 100%);
   color: $color-white;
-  border: 2px solid $color-white;
+  box-shadow: 0 4px 14px rgba(#1ebd59, 0.25);
 
   &:hover {
-    background-color: $color-white;
-    color: $color-primary;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(#1ebd59, 0.35);
   }
 }
 
@@ -128,20 +135,37 @@ ul {
   width: 100%;
 }
 
-// --- Navbar ---
+@keyframes softPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(#1ebd59, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(#1ebd59, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(#1ebd59, 0);
+  }
+}
+.pulse-animation {
+  animation: softPulse 2.5s infinite;
+}
+
+// --- Navbar (Rediseño Responsivo) ---
 .navbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background: rgba($color-white, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  background: rgba($color-white, 0.96);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.03);
   z-index: 1000;
-  padding: 15px 0;
+  padding: 16px 0;
   transition: all 0.3s ease;
 
   &.scrolled {
-    padding: 10px 0;
+    padding: 12px 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
   }
 
   .nav-container {
@@ -151,12 +175,11 @@ ul {
   }
 
   .logo {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 800;
     color: $color-primary;
-
     span {
-      color: $color-secondary; // GIC (teal) ondo (amber)
+      color: $color-secondary;
     }
   }
 
@@ -165,547 +188,439 @@ ul {
     align-items: center;
     gap: 30px;
 
+    @media (max-width: 992px) {
+      // Estado oculto móvil por defecto
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: $color-white;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px;
+      gap: 24px;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-20px);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+
     a {
       font-weight: 500;
       color: $text-dark;
-      transition: color 0.3s ease;
-
+      font-size: 1.05rem;
+      transition: color 0.3s;
       &:hover {
         color: $color-primary;
       }
 
-      &.nav-cta {
-        padding: 10px 24px;
-        color: $color-white;
-        &:hover {
-          color: $color-white;
-        }
+      @media (max-width: 992px) {
+        font-size: 1.3rem;
+        font-weight: 600;
       }
     }
   }
 
+  // Hamburger Button
   .hamburger {
     display: none;
     flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
     cursor: pointer;
-    gap: 6px;
+    z-index: 1001; // Queda por encima del contenedor móvil desplegado
+
+    @media (max-width: 992px) {
+      display: flex;
+    }
 
     span {
-      width: 25px;
-      height: 3px;
-      background: $color-primary;
-      border-radius: 2px;
-      transition: 0.3s;
+      width: 100%;
+      height: 2.5px;
+      background-color: $color-primary;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      transform-origin: left center;
     }
 
     &.active span:nth-child(1) {
-      transform: translateY(9px) rotate(45deg);
+      transform: rotate(45deg);
     }
     &.active span:nth-child(2) {
+      width: 0%;
       opacity: 0;
     }
     &.active span:nth-child(3) {
-      transform: translateY(-9px) rotate(-45deg);
+      transform: rotate(-45deg);
     }
   }
 }
 
-// --- Hero Section ---
+// --- Hero Split Layout Adaptable ---
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  // Utilizamos la imagen anterior si existe, o un color de fondo con la paleta
-  background: url("../images/gallery/condominium.jpg") center/cover no-repeat;
-  background-color: $color-primary; // Fallback
+  background-color: $color-primary;
   color: $color-white;
-  padding-top: 80px;
+  padding: 100px 0 60px;
 
   .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(
       135deg,
-      rgba($color-primary, 0.92) 0%,
-      rgba(10, 124, 110, 0.8) 100%
+      rgba($color-primary, 0.95) 0%,
+      rgba(#044e45, 0.88) 100%
     );
     z-index: 1;
   }
 
-  .hero-content {
+  .hero-container {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+
+    @media (min-width: 992px) {
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+    }
+  }
+
+  .hero-text {
+    text-align: center;
+    @media (min-width: 992px) {
+      text-align: left;
+    }
 
     .badge {
-      display: inline-block;
-      padding: 6px 16px;
-      background: rgba($color-white, 0.15);
-      border-radius: 20px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      margin-bottom: 25px;
-      border: 1px solid rgba($color-white, 0.3);
-      backdrop-filter: blur(5px);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba($color-white, 0.12);
+      border-radius: 30px;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+      border: 1px solid rgba($color-white, 0.2);
     }
 
     h1 {
-      font-size: 3.5rem;
-      margin-bottom: 25px;
-      line-height: 1.15;
-      font-weight: 800;
-      letter-spacing: -1px;
+      font-size: 2.2rem;
+      line-height: 1.2;
+      font-weight: 700;
+      margin-bottom: 20px;
+
+      @media (min-width: 768px) {
+        font-size: 3.4rem;
+      }
     }
 
     p {
-      font-size: 1.25rem;
-      margin-bottom: 40px;
+      font-size: 1.1rem;
       opacity: 0.9;
-      font-weight: 400;
-      max-width: 650px;
+      margin-bottom: 30px;
+      @media (min-width: 768px) {
+        font-size: 1.2rem;
+      }
     }
 
-    .hero-actions {
+    .trust-indicators {
       display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      @media (min-width: 992px) {
+        align-items: flex-start;
+      }
+
+      p {
+        font-size: 1rem;
+        margin: 0;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        i {
+          color: $color-secondary;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  .hero-form-card {
+    background: $color-white;
+    padding: 30px 24px;
+    border-radius: 20px;
+    color: $text-dark;
+    box-shadow: 0 20px 45px rgba(4, 78, 69, 0.25);
+    border: 1px solid rgba($color-primary, 0.05);
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto; // Centra la tarjeta en pantallas móviles
+
+    @media (min-width: 768px) {
+      padding: 40px;
+    }
+
+    .card-badge-top {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background-color: $color-secondary;
+      color: $text-dark;
+      padding: 3px 12px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+      color: $color-primary;
+      margin-bottom: 8px;
+    }
+
+    .card-subtitle {
+      color: $text-muted;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+
+      label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #374151;
+        .optional {
+          font-weight: 400;
+          color: #9ca3af;
+        }
+      }
+
+      input {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid $border-color;
+        border-radius: 10px;
+        font-family: inherit;
+        font-size: 1rem;
+        background-color: #f9fafb;
+        transition: all 0.3s;
+
+        &:focus {
+          outline: none;
+          border-color: $color-primary;
+          background-color: $color-white;
+          box-shadow: 0 0 0 3px rgba($color-primary, 0.08);
+        }
+      }
+    }
+
+    .wa-trust-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-size: 0.8rem;
+      color: #9ca3af;
     }
   }
 }
 
-// --- Nosotros (Por qué elegirnos) ---
+// --- Grid de tarjetas Nosotros (Auto-ajustable) ---
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  ); // Cambia dinámicamente de filas a columnas
+  gap: 25px;
 
   .about-card {
     background: $color-white;
-    padding: 40px 30px;
+    padding: 35px 25px;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
     border: 1px solid $border-color;
     transition:
       transform 0.3s ease,
-      box-shadow 0.3s ease;
+      box-shadow 0.3s;
 
     &:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-      border-color: rgba($color-primary, 0.2);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba($color-primary, 0.06);
+      border-color: rgba($color-primary, 0.15);
     }
 
     .icon-box {
-      width: 60px;
-      height: 60px;
-      background: rgba($color-secondary, 0.15);
+      width: 50px;
+      height: 50px;
+      background: rgba($color-secondary, 0.1);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 25px;
-
+      margin-bottom: 20px;
       i {
-        font-size: 32px;
+        font-size: 26px;
         color: $color-secondary;
       }
     }
 
     h3 {
-      color: $text-dark;
-      margin-bottom: 15px;
-      font-size: 1.4rem;
-      font-weight: 700;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
     }
-
-    p {
-      color: $text-muted;
-    }
-  }
-}
-
-// --- Servicios ---
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 25px;
-
-  .service-card {
-    background: $color-bg-light;
-    padding: 30px 25px;
-    border-radius: 12px;
-    border: 1px solid transparent;
-    transition: all 0.3s ease;
-
-    i {
-      font-size: 40px;
-      color: $color-primary;
-      margin-bottom: 20px;
-      transition: color 0.3s ease;
-    }
-
-    h4 {
-      font-size: 1.2rem;
-      color: $text-dark;
-      margin-bottom: 10px;
-      font-weight: 600;
-    }
-
     p {
       color: $text-muted;
       font-size: 0.95rem;
     }
+  }
+}
+
+// --- Grid de Servicios (Fluido sin desbordes) ---
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(240px, 1fr)
+  ); // Evita anchos rígidos destructivos en pantallas pequeñas
+  gap: 20px;
+
+  .service-card {
+    background: #f9fafb;
+    padding: 30px 20px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+
+    i {
+      font-size: 32px;
+      color: $color-primary;
+      margin-bottom: 14px;
+      transition: all 0.3s;
+    }
+
+    h4 {
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    p {
+      color: $text-muted;
+      font-size: 0.9rem;
+    }
 
     &:hover {
       background: $color-white;
-      border-color: rgba($color-primary, 0.3);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-      transform: translateY(-5px);
+      border-color: rgba($color-primary, 0.2);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+      transform: translateY(-4px);
 
       i {
-        color: $color-secondary;
+        color: $color-accent;
+        transform: scale(1.1) rotate(3deg);
       }
     }
   }
 }
 
-// --- Contacto ---
+// --- Wrapper de Contacto final adaptable ---
 .contact-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: $color-white;
+  background: linear-gradient(135deg, $color-primary 0%, #054840 100%);
   border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
+  padding: 40px 20px;
+  text-align: center;
+  color: $color-white;
+  box-shadow: 0 15px 35px rgba(#054840, 0.2);
 
-  .contact-info {
-    background: $color-primary;
-    color: $color-white;
+  @media (min-width: 768px) {
     padding: 60px;
-    position: relative;
-
-    // Decorative element
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -50px;
-      right: -50px;
-      width: 200px;
-      height: 200px;
-      background: rgba($color-white, 0.05);
-      border-radius: 50%;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      margin-bottom: 15px;
-      font-weight: 700;
-    }
-
-    p {
-      color: rgba($color-white, 0.8);
-      margin-bottom: 40px;
-      font-size: 1.1rem;
-    }
-
-    .info-list {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-
-      .info-item {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-
-        i {
-          font-size: 28px;
-          color: $color-secondary;
-          background: rgba($color-secondary, 0.15);
-          padding: 12px;
-          border-radius: 50%;
-        }
-
-        div {
-          display: flex;
-          flex-direction: column;
-
-          span {
-            font-size: 0.9rem;
-            color: rgba($color-white, 0.7);
-          }
-
-          a {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: $color-white;
-            transition: color 0.3s;
-
-            &:hover {
-              color: $color-secondary;
-            }
-          }
-        }
-      }
-    }
   }
 
-  .contact-form-container {
-    padding: 60px;
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-
-      .form-group {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-
-        label {
-          font-size: 0.9rem;
-          font-weight: 600;
-          color: $text-dark;
-        }
-
-        input,
-        textarea {
-          width: 100%;
-          padding: 14px 16px;
-          border: 1px solid $border-color;
-          border-radius: 8px;
-          font-family: inherit;
-          font-size: 1rem;
-          background-color: $color-bg-light;
-          transition: all 0.3s ease;
-
-          &:focus {
-            outline: none;
-            border-color: $color-primary;
-            background-color: $color-white;
-            box-shadow: 0 0 0 4px rgba($color-primary, 0.1);
-          }
-        }
+  .contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      @media (min-width: 768px) {
+        font-size: 2.4rem;
       }
+    }
+    p {
+      opacity: 0.88;
+      margin-bottom: 30px;
+      font-size: 1.05rem;
     }
   }
 }
 
 // --- Footer ---
 footer {
-  background: #111827; // Darker than primary for contrast
+  background: #0b131f;
   color: #9ca3af;
-  padding: 60px 0 30px;
-
+  padding: 40px 0 25px;
   .footer-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
     text-align: center;
   }
-
-  .footer-logo {
-    margin-bottom: 30px;
-
-    .logo {
-      font-size: 2rem;
-      font-weight: 800;
-      color: $color-white;
-      display: block;
-      margin-bottom: 15px;
-
-      span {
-        color: $color-secondary;
-      }
-    }
-
-    p {
-      max-width: 400px;
-      margin: 0 auto;
+  .logo {
+    font-size: 1.6rem;
+    color: $color-white;
+    span {
+      color: $color-secondary;
     }
   }
-
   .footer-bottom {
     width: 100%;
-    padding-top: 30px;
-    border-top: 1px solid rgba($color-white, 0.1);
-    font-size: 0.9rem;
+    border-top: 1px solid rgba($color-white, 0.06);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.85rem;
   }
 }
 
-// --- Animaciones ---
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition:
-    opacity 0.8s ease-out,
-    transform 0.8s ease-out;
-
-  &.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+// --- Scroll Effects Base ---
+.fade-in-up,
 .stagger-item,
 .stagger-item-2 {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(20px);
   transition:
     opacity 0.6s ease-out,
     transform 0.6s ease-out;
-
   &.visible {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-// --- Responsive ---
-@media (max-width: 992px) {
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-
-    .contact-info,
-    .contact-form-container {
-      padding: 40px 30px;
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    .nav-links {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background: $color-white;
-      flex-direction: column;
-      padding: 20px 0;
-      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-      transition: clip-path 0.4s ease-in-out;
-      gap: 20px;
-
-      &.active {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-      }
-    }
-
-    .hamburger {
-      display: flex;
-    }
-  }
-
-  .hero .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .section {
-    padding: 60px 0;
-  }
-}
-
-/* --- Ajustes para el Hero Dividido --- */
-.hero {
-  /* Quita el text-align: center que tenías antes si afectaba a todo */
-  text-align: left;
-}
-
-.hero-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
-
-.hero-text {
-  color: #ffffff;
-}
-
-.trust-indicators {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.trust-indicators p {
-  font-size: 1.05rem;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.trust-indicators i {
-  color: #f59e0b; /* Tu color ámbar */
-  font-size: 1.2rem;
-}
-
-/* Tarjeta flotante del formulario */
-.hero-form-card {
-  background: #ffffff;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  color: #1f2937;
-}
-
-.hero-form-card h3 {
-  font-size: 1.5rem;
-  color: #0a7c6e;
-  margin-bottom: 10px;
-}
-
-.hero-form-card p {
-  color: #6b7280;
-  font-size: 0.95rem;
-  margin-bottom: 25px;
-}
-
-.hero-form-card .form-group {
-  margin-bottom: 15px;
-}
-
-.hero-form-card input {
-  width: 100%;
-  padding: 14px 16px;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  font-family: inherit;
-  background-color: #fafafa;
-  transition: all 0.3s ease;
-}
-
-.hero-form-card input:focus {
-  outline: none;
-  border-color: #0a7c6e;
-  background-color: #ffffff;
-}
-
-/* Responsive para que colapse en pantallas pequeñas */
-@media (max-width: 992px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    margin-top: 40px;
-  }
-
-  .trust-indicators {
-    align-items: center;
-  }
-
-  .hero-form-card {
-    text-align: left;
-    padding: 30px 20px;
   }
 }

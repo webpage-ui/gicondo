@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="es">
   <head>
@@ -5,111 +6,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="GIC - Gestión Inteligente de Condominios. Administración transparente, eficiente y con alta tecnología para tu comunidad."
+      content="GIC - Gestión Inteligente de Condominios. Cotiza tu administración por WhatsApp de forma inmediata con alta tecnología."
     />
     <title>GICondo | Administración Inteligente de Condominios</title>
 
-    <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Boxicons (Modern Icons) -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="static/scss/styles.css" />
+    <link rel="stylesheet" href="static/css/styles.css" />
   </head>
   <body class="bg-light">
-    <!-- Navbar -->
     <nav class="navbar" id="navbar">
       <div class="container nav-container">
         <a href="#" class="logo">GIC<span>ondo</span></a>
-        <ul class="nav-links">
+        <ul class="nav-links" id="nav-links">
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#nosotros">Por qué elegirnos</a></li>
           <li><a href="#servicios">Servicios</a></li>
           <li>
-            <a href="#contacto" class="btn-accent nav-cta">Cotizar ahora</a>
+            <a
+              href="https://wa.me/525545309857"
+              target="_blank"
+              rel="noopener"
+              class="btn-accent nav-cta"
+              ><i class="bx bxl-whatsapp"></i> Chat Directo</a
+            >
           </li>
         </ul>
-        <div class="hamburger">
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </button>
       </div>
     </nav>
 
-    <!-- Hero Section -->
     <header id="inicio" class="hero">
       <div class="hero-overlay"></div>
       <div class="container hero-container">
         <div class="hero-text fade-in-up">
-          <span class="badge">Administración Profesional</span>
+          <span class="badge"
+            ><i class="bx bx-bolt-circle"></i> Administración profesional de
+            condominios</span
+          >
           <h1>Tranquilidad y transparencia para tu condominio</h1>
           <p>
-            No solo administramos, gestionamos tu entorno para mejorar la
-            calidad de vida de tu comunidad con alta tecnología y cuentas
-            claras.
+            Administración de condominios. Gestionamos tu entorno para mejorar
+            la calidad de vida de tu comunidad con soluciones tecnológicas
+            eficientes y cuentas 100% claras.
           </p>
           <div class="trust-indicators">
-            <p><i class="bx bx-check-circle"></i> Redacción de reglamentos</p>
             <p>
-              <i class="bx bx-check-circle"></i> Reportes financieros claros
+              <i class="bx bx-check-shield"></i>
+              Atención ágil y personalizada
+            </p>
+            <p>
+              <i class="bx bx-check-shield"></i> Transparencia financiera
+              absoluta
             </p>
           </div>
         </div>
 
-        <div class="hero-form-card fade-in-up" style="transition-delay: 0.2s">
-          <h3>Solicita una cotización rápida</h3>
-          <p>Te responderemos en menos de 24 horas.</p>
-          <form
-            action="https://formsubmit.co/contacto@gicondo.com"
-            method="POST"
-          >
+        <div class="hero-form-card fade-in-up" style="transition-delay: 0.15s">
+          <div class="card-badge-top">Acompañamiento Profesional</div>
+          <h3>Atención directa por WhatsApp</h3>
+
+          <div class="whatsapp-wizard">
             <div class="form-group">
+              <label for="wa-condo-name"
+                >Nombre del condominio
               <input
                 type="text"
-                name="Nombre"
-                placeholder="Tu nombre"
-                required
+                id="wa-condo-name"
+                placeholder="Ej. Residencial del Parque"
               />
             </div>
             <div class="form-group">
+              <label for="wa-condo-units">Número de viviendas</label>
               <input
-                type="tel"
-                name="Telefono"
-                placeholder="Teléfono"
-                required
+                type="number"
+                id="wa-condo-units"
+                placeholder="Ej. 36"
+                min="1"
               />
             </div>
-            <button type="submit" class="btn-primary btn-block">
-              Contactar ahora
-            </button>
-          </form>
+
+            <a
+              href="https://wa.me/525545309857"
+              id="wa-hero-cta"
+              target="_blank"
+              rel="noopener"
+              class="btn-whatsapp btn-block pulse-animation"
+            >
+              <i class="bx bxl-whatsapp"></i> Cotizar por WhatsApp
+            </a>
+            <div class="wa-trust-footer">
+              <i class="bx bx-lock-alt"></i> Conexión directa y segura con un
+              asesor.
+            </div>
+          </div>
         </div>
       </div>
     </header>
 
-    <!-- Nosotros Section -->
     <section id="nosotros" class="section about">
       <div class="container">
         <div class="section-header fade-in-up">
           <h2>¿Por qué elegir GICondo?</h2>
-          <p>No solo administramos, transformamos la forma en que vives.</p>
+          <p>
+            Revolucionamos la gestión condominal combinando cercanía humana con
+            procesos tecnológicos claros.
+          </p>
         </div>
         <div class="about-grid">
           <div class="about-card stagger-item">
             <div class="icon-box"><i class="bx bx-target-lock"></i></div>
             <h3>Objetivo Claro</h3>
             <p>
-              Garantizar que tu comunidad viva en un entorno funcional, seguro y
-              completamente satisfactorio para todos los condóminos.
+              Garantizar que tu comunidad viva en un entorno completamente
+              funcional, seguro y armónico para todos los condóminos.
             </p>
           </div>
           <div class="about-card stagger-item">
@@ -117,167 +139,116 @@
             <h3>Mejora Continua</h3>
             <p>
               Brindamos soluciones integrales de alta calidad, promoviendo
-              procesos ágiles y un ambiente siempre enfocado en la mejora.
+              procesos ágiles y un ambiente siempre enfocado en la excelencia.
             </p>
           </div>
           <div class="about-card stagger-item">
-            <div class="icon-box"><i class="bx bx-handshake"></i></div>
-            <h3>Relaciones a Largo Plazo</h3>
+            <div class="icon-box"><i class="bx bx-group"></i></div>
+            <h3>Relaciones Transparentes</h3>
             <p>
-              Nos enfocamos en solucionar problemas concretos con transparencia,
-              ganando tu confianza para construir un futuro juntos.
+              Nos enfocamos en dar solución a problemas concretos con total
+              honestidad, ganando tu confianza día a día.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Servicios Section -->
     <section id="servicios" class="section services bg-white">
       <div class="container">
         <div class="section-header fade-in-up">
-          <h2>Soluciones Integrales</h2>
-          <p>Todo lo que tu condominio necesita en un solo lugar.</p>
+          <h2>Soluciones de Extremo a Extremo</h2>
+          <p>Todo el control administrativo y operativo en manos expertas.</p>
         </div>
         <div class="services-grid">
           <div class="service-card stagger-item-2">
             <i class="bx bx-book-bookmark"></i>
             <h4>Revisión de reglamentos</h4>
-            <p>Actualización y validación de normativas internas.</p>
+            <p>
+              Actualización y validación estructural de normativas internas.
+            </p>
           </div>
           <div class="service-card stagger-item-2">
             <i class="bx bx-receipt"></i>
             <h4>Recepción de pagos</h4>
-            <p>Emisión de recibos y control riguroso de ingresos.</p>
+            <p>Emisión inmediata de recibos digitales y control estricto.</p>
           </div>
           <div class="service-card stagger-item-2">
             <i class="bx bx-pie-chart-alt-2"></i>
             <h4>Estados financieros</h4>
-            <p>Transparencia total con reportes claros y accesibles.</p>
+            <p>
+              Cuentas claras con reportes accesibles y totalmente transparentes.
+            </p>
           </div>
           <div class="service-card stagger-item-2">
             <i class="bx bx-building-house"></i>
             <h4>Conciliación bancaria</h4>
-            <p>Cuentas claras y balances exactos mes a mes.</p>
+            <p>Balances detallados y exactitud financiera mes con mes.</p>
           </div>
           <div class="service-card stagger-item-2">
             <i class="bx bx-clipboard"></i>
             <h4>Reportes operativos</h4>
-            <p>Seguimiento detallado de incidencias y mantenimientos.</p>
+            <p>
+              Mapeo estratégico y seguimiento rápido de incidencias cotidianas.
+            </p>
           </div>
           <div class="service-card stagger-item-2">
             <i class="bx bx-wallet"></i>
-            <h4>Cobranza</h4>
-            <p>Gestión eficiente de cuotas ordinarias y extraordinarias.</p>
+            <h4>Cobranza Efectiva</h4>
+            <p>
+              Recuperación inteligente de cuotas ordinarias y extraordinarias.
+            </p>
           </div>
           <div class="service-card stagger-item-2">
             <i class="bx bx-shield-quarter"></i>
             <h4>Selección de proveedores</h4>
-            <p>Evaluación estricta para garantizar los mejores servicios.</p>
+            <p>
+              Evaluación competitiva para asegurar servicios de mantenimiento de
+              alto nivel.
+            </p>
           </div>
           <div class="service-card stagger-item-2">
             <i class="bx bx-group"></i>
             <h4>Asambleas y Gestión</h4>
-            <p>Organización de juntas y trámites ante autoridades.</p>
+            <p>
+              Convocatorias profesionales y trámites institucionales ante las
+              autoridades.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contacto Section -->
     <section id="contacto" class="section contact">
       <div class="container">
         <div class="contact-wrapper fade-in-up">
           <div class="contact-info">
-            <h2>Hablemos de tu condominio</h2>
+            <h2>¿Todo listo para dar el siguiente paso?</h2>
             <p>
-              Estamos listos para ayudarte a mejorar la administración y el
-              entorno de tu espacio. Solicita una propuesta a tu medida.
+              Platica con nuestro equipo hoy mismo. Haremos un diagnóstico
+              preliminar de tu condominio sin costo y de forma directa en tu
+              WhatsApp.
             </p>
-
-            <div class="info-list">
-              <div class="info-item">
-                <i class="bx bxl-whatsapp"></i>
-                <div>
-                  <span>WhatsApp / Celular</span>
-                  <a href="https://api.whatsapp.com/send?phone=525545309857"
-                    >55 4530 9857</a
-                  >
-                </div>
-              </div>
-              <div class="info-item">
-                <i class="bx bx-envelope"></i>
-                <div>
-                  <span>Email</span>
-                  <a href="mailto:contacto@gicondo.com">contacto@gicondo.com</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="contact-form-container">
-            <form
-              class="contact-form"
-              action="https://formsubmit.co/contacto@gicondo.com"
-              method="POST"
+            <a
+              href="https://wa.me/525545309857"
+              target="_blank"
+              rel="noopener"
+              class="btn-accent pulse-animation"
             >
-              <div class="form-group">
-                <label for="nombre">Nombre completo</label>
-                <input
-                  type="text"
-                  id="nombre"
-                  name="Nombre"
-                  placeholder="Ej. Juan Pérez"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="email">Correo electrónico</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="Email"
-                  placeholder="tu@correo.com"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="telefono">Teléfono</label>
-                <input
-                  type="tel"
-                  id="telefono"
-                  name="Telefono"
-                  placeholder="A 10 dígitos"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="mensaje">¿En qué podemos ayudarte?</label>
-                <textarea
-                  id="mensaje"
-                  name="Mensaje"
-                  rows="4"
-                  placeholder="Cuéntanos un poco sobre tu condominio..."
-                  required
-                ></textarea>
-              </div>
-              <button type="submit" class="btn-primary btn-block">
-                Enviar Mensaje <i class="bx bx-send"></i>
-              </button>
-            </form>
+              <i class="bx bxl-whatsapp"></i> Cotizar por WhatsApp
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
     <footer>
       <div class="container footer-container">
         <div class="footer-logo">
           <a href="#" class="logo">GIC<span>ondo</span></a>
           <p>
-            Gestión Inteligente de Condominios con alta tecnología y
-            transparencia.
+            Gestión Inteligente de Condominios con alta tecnología, seguridad y
+            cuentas transparentes.
           </p>
         </div>
         <div class="footer-bottom">
