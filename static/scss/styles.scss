@@ -161,17 +161,38 @@ h4,
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.03);
   z-index: 1000;
   padding: 16px 0;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); // Transición suave para el scroll
 
+  // EFECTO PREMIUM: El logo se encoge sutilmente cuando el usuario hace scroll
   &.scrolled {
-    padding: 12px 0;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    padding: 10px 0;
+
+    .logo-img {
+      height: 32px; // Altura más compacta al hacer scroll
+    }
   }
 
   .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center; // Alinea la imagen perfectamente al centro vertical de la barra
+
+    .logo-img {
+      height: 38px; // CONTROL CRÍTICO: Define la altura perfecta para pantallas normales
+      width: auto; // Mantiene la proporción original (aspect-ratio) sin deformar la imagen
+      object-fit: contain; // Asegura que la imagen se adapte sin recortarse
+      transition: height 0.3s ease; // Permite la animación fluida al hacer scroll
+
+      // Ajuste específico para celulares (pantallas pequeñas)
+      @media (max-width: 576px) {
+        height: 32px; // Ligeramente más pequeño en móviles para dar espacio al botón hamburguesa
+      }
+    }
   }
 
   .logo {

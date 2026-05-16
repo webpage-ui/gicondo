@@ -140,16 +140,34 @@ h4,
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.03);
   z-index: 1000;
   padding: 16px 0;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .navbar.scrolled {
-  padding: 12px 0;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  padding: 10px 0;
+}
+.navbar.scrolled .logo-img {
+  height: 32px;
 }
 .navbar .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.navbar .logo {
+  display: inline-flex;
+  align-items: center;
+}
+.navbar .logo .logo-img {
+  height: 38px;
+  width: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: height 0.3s ease;
+}
+@media (max-width: 576px) {
+  .navbar .logo .logo-img {
+    height: 32px;
+  }
 }
 .navbar .logo {
   font-size: 1.6rem;
